@@ -788,10 +788,31 @@ text-decoration: underline;
 }
 /**** Content top ****/
 .features{
-	background:#FFF;
+	background:#FFF;   /*arriere plan du site*/
 	padding:4em 0 3em 0;
 	text-align:center;
 }
+
+
+/* ======================================ajouted bas debut*/
+.features p,  .content_bottom p{    
+	font-size:1.5em;    /*avant 3.5*/
+	color:#000000; /* avant 222* 17h15 02/07/2024*/
+	padding:10px 0;
+	font-weight:350;
+	
+}
+
+.features p span,.content_bottom p span{
+	font-weight:bold;
+	color:#000000;
+}
+/* ===========================================ajouted bas fin*/
+
+
+
+
+
 .features h2,.content_bottom h2{
 	font-size:3.5em;
 	color:#222;
