@@ -809,7 +809,7 @@ text-decoration: underline;
 .features h3,.content_bottom h3{
 	font-size:1.5em;
 	margin-bottom:1em;
-	color:#222;
+	color:#440fe2;    /* avant color:#222; reactivite*/
 	font-weight:300;
 }
 .features h4,.content_bottom h4{
@@ -1126,7 +1126,7 @@ text-decoration: underline;
 
 }
 .images_1_of_3  h3{
-	font-size: 1.3em;
+	font-size: 1.9em; /*avant 1.3em reactivite*/
 	font-weight: 600;
 	padding-top: 20px;
 }
