@@ -105,9 +105,10 @@ Author: EcranDirect
                 element.innerHTML = '' + debutad + ' ' + milieuad + ' ' + finad + '';
             }
 			
-			var debutad = "9080";
-            var milieuad = "60584";
-            var finad = "00012";
+			// numero siret cached les trois ligne suivantes 
+			var debutad = "";
+            var milieuad = "";
+            var finad = "";
             var elements = document.getElementsByClassName('antispam-siret');
             for (var i = 0; i < elements.length; i++) {
                 var element = elements[i];
@@ -180,7 +181,7 @@ Author: EcranDirect
 									</div>
 									<div class="grid_1_of_3 images_1_of_3 wow fadeInDown" data-wow-delay="0.9s">
 										<img src="images/configuration3.png" alt="configuration" />
-										<h3>Configuration / formatage / bureautique</h3>
+										<h3>Configuration / Formatage / Bureautique</h3>
 									</div>
 					              </div>	
 
@@ -216,11 +217,11 @@ Author: EcranDirect
 										<ul>
 											<li><span>Installation de windows :</span> Installation de système d'exploitation windows 11, windows 10, linux ubunto, linux mint, windows serveur, etc. </li>
 											<li><span>Configuration et paramétrage:</span> Réglages et configuration de windows et logiciels d'application. Configuration des réseaux, administrateur et accès aux utilisateurs sous windows et autres. </li>
-											<li><span>solutions aux bugs</span> Réinitialisation des paramètres et reconfiguration de windows, Réinstallation du système, correction des erreurs, des fichiers, reconstruction des registres, etc. </li>
+											<li><span>Solutions aux bugs</span> Réinitialisation des paramètres et reconfiguration de windows, Réinstallation du système, correction des erreurs, des fichiers, reconstruction des registres, etc. </li>
 											
 											<li><span>Désinfection & antivirus :</span> Elimination des virus, spyware et divers menaces. Rétablir la sécurité au fonctionnement de windows. Installation d'un anti-virus, etc.</li>
 											<li><span>Sauvegarde et restauration:</span> Création de système informatique de sauvegarde de données automatique , montage et configuration de NAS et supports de sauvegarde. Création de point de restauration et paramétrage des espaces de stockage. Récupération de données sur disques dur, etc.  </li>
-											<li><span>boost de votre ordinateur:</span> Si votre ordinateur est lent, des solutions (software et hardware) existent pour remédier aux ralentissements de votre machine par l'accélération et la rehausse des ces performances d'origine. </li>
+											<li><span>boost de votre ordinateur:</span> Si votre ordinateur est lent, des solutions (software et hardware) existent pour remédier aux ralentissements de votre machine par l'accélération et l'augmentation des resources et performances d'origine. </li>
 										</ul>
 									</div>
 								</div>
@@ -234,7 +235,7 @@ Author: EcranDirect
 											<li><span>Enlèvement pour réparation en atelier :</span> Service enlèvement de votre matériel si la panne est averée trop compliquée pour être résolu à domicile ou sur votre lieu de travail. </li>
 											<li><span>Livraison après réparation:</span> Votre ordinateur réparé, une livraison peut être une solution envisageable dans certains cas et sans aucuns frais supplémentaires.</li>
 											<li><span>Dépannage PC à distance : </span>Notre informaticien dispose des outils et techniques de prise en mains et contrôle à distance qui peuvent parfois résoudre le problème et eviter des déplacements.  </li>
-											<li><span>boost de votre ordinateur:</span> Nous proposons des solutions informatiques (software et hardware) qui peuvent booster au maximum les performances de votre ordinateur.</li>
+											<!--<li><span>boost de votre ordinateur:</span> Nous proposons des solutions informatiques (software et hardware) qui peuvent booster au maximum les performances de votre ordinateur.</li>-->
 										</ul>
 										<!--<ul>
 											<li>Installation de bornes TPE, caisses enregistreuses, comptoirs ou guichets</li>
@@ -252,7 +253,7 @@ Author: EcranDirect
 
 								<div class="wrap wow fadeInDown" data-wow-delay="0.2s">
 									<div class="features_services" id="depannage-informatique">							
-										<h2><span>Service à la personne SAP│ </span> 50 % réduction ou crédit d'impôt</h2>
+										<h2><span>Service à la personne SAP│ </span> 50 % de réduction ou crédit d'impôt</h2>
 										<!--<h2><span>Service à la personne SAP│ </span> -50 % Crédit d'impôt</h2>-->
 										<p>Benificiez de l'aide de l'état et profitez d'une réduction de 50% sur nos interventions pour une assistance informatique à domicile de tout genres.  </p>
 										<ul>
@@ -267,7 +268,7 @@ Author: EcranDirect
 										<div class="section group">
 											<div class="grid_1_of_3 images_1_of_3 wow fadeInDown" data-wow-delay="0.4s">
 												 <img src="images/depannage1.png" alt="dépannage informatique" />
-												 <h4>Réactivité & Qualité</h4>
+												 <h3>Réactivité & Qualité</h3>
 											</div>
 											<div class="grid_1_of_3 images_1_of_3 wow fadeInDown" data-wow-delay="0.7s">
 												 <img src="images/installation1.png" alt="installation" />
@@ -395,7 +396,7 @@ Author: EcranDirect
 		
 		<div class="map wow fadeInRight" data-wow-delay=".3s">
 			<div class="informatique-grand-est">
-				<p class="wow fadeInDown" data-wow-delay=".4s">Prestations de service de dépannage informatique aux particuliers et profesionels sur Nancy et sa région.</p>
+				<p class="wow fadeInDown" data-wow-delay=".4s">Réparation toutes marques décran d'ordinateur & dépannage informatique aux particuliers et profesionels - Nancy.</p>
 			</div>
 			<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d84196.3554042682!2d6.137871059964482!3d48.68439815939695!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4794a176d35610c5%3A0x40a5fbf986730e0!2sNancy!5e0!3m2!1sfr!2sfr!4v1689234958739" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
 
@@ -404,7 +405,8 @@ Author: EcranDirect
 
 		     <div class="copy_right">
 		     	<div class="wrap">
-				    <p>Tous droits réservés © Copyright 2024 LCD-PRO - Siret : <span class="antispam-siret">Siret</span></p>
+				    <p>Tous droits réservés © Copyright 2024 EcranExpress.fr <span class="antispam-siret">Siret</span></p>
+					<!--<p>Tous droits réservés © Copyright 2024 EcranExpress.fr - Siret : <span class="antispam-siret">Siret</span></p>-->
 		     	</div>
 		   	</div>		 
 	</body>
