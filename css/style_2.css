@@ -570,10 +570,10 @@ input:focus {
 
 .banner_desc {
 	width:70%;
-	padding:9.5em 0 1.5em 0;
+	padding:15.5em 0 1.5em 0;  /*original padding:9.5em 0 1.5em 0;*/
 	text-align:center;
-	color: #FFF;
-	font-weight:300;
+	color: #FFF;   /* couleur h1*/
+	font-weight:400; /*original 300*/
 	text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.31);
 	font-family: 'Roboto', sans-serif;
 	margin: 0 auto;
