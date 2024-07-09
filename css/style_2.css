@@ -398,7 +398,7 @@ input:focus {
 }
 /*** main ****/
 .content_top{	
-  background: url("/images/services-infosystem-background.jpg") no-repeat;
+  background: url("../images/1515.jpg") no-repeat;
   background-size: cover;
   background-attachment: fixed;
   background-position: 40% 80%;
@@ -412,7 +412,8 @@ input:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(110deg, rgb(13, 88, 166) 10%, rgba(68, 147, 217, 0.77) 100%), url("/images/services-infosystem-background.jpg");
+    background: linear-gradient(110deg, rgb(35, 68, 174, 0.77) 10%, rgba(35, 68, 174, 0.77) 100%), url("../images/1515.jpg");
+	/*original background: linear-gradient(110deg, rgb(13, 88, 166) 10%, rgba(68, 147, 217, 0.77) 100%), url("../images/1515.jpg");*/
     z-index: 0;
     background-size: cover;
     background-position: center;
@@ -421,9 +422,9 @@ input:focus {
 .features_services{	
 	margin-top: 3em;
 }
-.features_services ul {
+.features_services ul {     /* couleur fond bleu des carree*/
   text-align: left;
-  background: linear-gradient(110deg, rgb(46, 122, 204) 10%, rgba(46, 122, 204, 0.85) 100%), url("/images/services-infosystem-background.jpg");
+  background: linear-gradient(110deg, rgb(46, 122, 204) 10%, rgba(46, 122, 204, 0.85) 100%), url("../images/1212.jpg");
   padding: 2em;
   border-radius: 2em;
   color: #e2e7ec;
