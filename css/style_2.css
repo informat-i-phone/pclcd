@@ -424,7 +424,8 @@ input:focus {
 }
 .features_services ul {     /* couleur fond bleu des carree*/
   text-align: left;
-  background: linear-gradient(110deg, rgb(46, 122, 204) 10%, rgba(46, 122, 204, 0.85) 100%), url("../images/1212.jpg");
+  background: linear-gradient(110deg, rgb(46, 122, 204) 10%, rgba(46, 122, 204, 0.77) 100%), url("../images/1818.jpg");
+  /* original background: linear-gradient(110deg, rgb(46, 122, 204) 10%, rgba(46, 122, 204, 0.85) 100%), url("../images/1818.jpg");*/
   padding: 2em;
   border-radius: 2em;
   color: #e2e7ec;
