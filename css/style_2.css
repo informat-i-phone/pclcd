@@ -412,8 +412,8 @@ input:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(110deg, rgb(35, 68, 174, 0.30) 10%, rgba(35, 68, 174, 0.30) 100%), url("../images/3333.jpg");
-	/*original background: linear-gradient(110deg, rgb(13, 88, 166) 10%, rgba(68, 147, 217, 0.77) 100%), url("../images/1515.jpg");*/
+    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/3333.jpg"); /*image principale*/
+	/*original background: linear-gradient(110deg, rgb(13, 88, 166) 10%, rgba(68, 147, 217, 0.77) 100%), url("../images/1515.jpg");         */
     z-index: 0;
     background-size: cover;
     background-position: center;
@@ -570,7 +570,7 @@ input:focus {
 
 .banner_desc {
 	width:70%;
-	padding:30.5em 0 1.5em 0;  /*original padding:9.5em 0 1.5em 0;*/
+	padding:15.5em 0 1.5em 0;  /*original padding:9.5em 0 1.5em 0;*/
 	text-align:center;
 	color: #FFF;   /* couleur h1*/
 	font-weight:400; /*original 300*/
@@ -579,7 +579,7 @@ input:focus {
 	margin: 0 auto;
 }
 .banner_desc img{
-	padding:.9em 0 .9em 0;
+	padding:.5em 0 .5em 0;
 }
 .banner_desc h1{
 	margin: 0 auto;
@@ -693,9 +693,9 @@ text-decoration: underline;
 
 
 .banner_desc p{
-	font-size:1em;
+	font-size:1.3em;   /*original font-size:1em;*/
 	font-style:italic;
-	padding-top:.5em;
+	padding-top:.5em;   /* original 5em text du h1*/
 }
 .banner_bottom{
 	padding: 9em 0 9em 0;
