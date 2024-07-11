@@ -693,7 +693,7 @@ text-decoration: underline;
 
 
 .banner_desc p{
-	font-size:1.3em;   /*original font-size:1em;*/
+	font-size:1.2em;   /*original font-size:1em;*/
 	font-style:italic;
 	padding-top:.5em;   /* original 5em text du h1*/
 }
