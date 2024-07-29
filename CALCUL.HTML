@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculateur de Prix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            padding: 20px;
+            border-radius: 8px;
+            background-color: #f4f4f4;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        input[type="number"], input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin: 20px 0;
+            padding: 10px;
+            background-color: #e0e0e0;
+            border-radius: 4px;
+        }
+        .gain {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Calculateur de Prix</h1>
+        <label for="prixHT">Prix Hors Taxe (HT) :</label>
+        <input type="number" id="prixHT" step="0.01">
+
+        <label for="tauxTVA">Taux de TVA (%) :</label>
+        <input type="number" id="tauxTVA" step="0.01">
+
+        <label for="fraisPort">Frais de Port :</label>
+        <input type="number" id="fraisPort" step="0.01">
+
+        <label for="benefice">Bénéfice Souhaité :</label>
+        <input type="number" id="benefice" step="0.01">
+
+        <button onclick="calculerPrix()">Calculer</button>
+        <button onclick="genererPDF()">Générer PDF</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculerPrix() {
+            // Récupère les valeurs saisies par l'utilisateur
+            var prixHT = parseFloat(document.getElementById('prixHT').value);
+            var tauxTVA = parseFloat(document.getElementById('tauxTVA').value);
+            var fraisPort = parseFloat(document.getElementById('fraisPort').value);
+            var benefice = parseFloat(document.getElementById('benefice').value);
+
+            // Calcule la TVA
+            var tva = (prixHT * tauxTVA) / 100;
+
+            // Calcule le prix TTC
+            var ttc = prixHT + tva;
+
+            // Affiche le prix TTC seul
+            var resultHTML = "<p>-- Le prix TTC: " + ttc.toFixed(2) + " euros --</p>";
+
+            // Ajoute les frais de port
+            var ttcFdp = ttc + fraisPort;
+
+            // Affiche le prix TTC avec frais de port
+            resultHTML += "<p>-- Le prix TTC avec FDP: " + ttcFdp.toFixed(2) + " euros --</p>";
+
+            // Calcule le prix final avec bénéfice
+            var prixFinal = ttcFdp + benefice;
+
+            // Affiche le prix final avec bénéfice
+            resultHTML += "<p>-- Prix CLIENT: " + prixFinal.toFixed(2) + " euros --</p>";
+
+            // Multiplie le prix final par 0.211 et ajoute le résultat au prix final
+            var prixPlus211 = prixFinal + (prixFinal * 0.211);
+
+            // Affiche le prix avec l'addition de 0.211 du prix final
+            resultHTML += "<p>-- Prix A DECLARER: " + prixPlus211.toFixed(2) + " euros --</p>";
+
+            // Multiplie le nouveau résultat par 0.2997 et ajoute le résultat au nouveau résultat
+            var prixPlus2997 = prixPlus211 + (prixPlus211 * 0.2997);
+
+            // Affiche le prix avec l'addition de 0.2997 du prix précédent
+            resultHTML += "<p>-- Prix final avec COM accesap: " + prixPlus2997.toFixed(2) + " euros --</p>";
+
+            // Divise le dernier résultat par deux
+            var prixDiviseDeux = prixPlus2997 / 2;
+
+            // Affiche le prix divisé par deux
+            resultHTML += "<p>-- Prix -- A ENCAISSER: " + prixDiviseDeux.toFixed(2) + " euros --</p>";
+
+            // Calcule le gain
+            var gain = prixFinal - prixDiviseDeux;
+
+            // Affiche le gain sur fond bleu
+            resultHTML += "<div class='gain'>-- GAIN CLIENT: " + gain.toFixed(2) + " euros --</div>";
+
+            // Affiche le résultat dans la div
+            document.getElementById('result').innerHTML = resultHTML;
+        }
+
+        async function genererPDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const prixHT = document.getElementById('prixHT').value;
+            const tauxTVA = document.getElementById('tauxTVA').value;
+            const fraisPort = document.getElementById('fraisPort').value;
+            const benefice = document.getElementById('benefice').value;
+            const resultDiv = document.getElementById('result').innerText;
+
+            doc.text("Résumé des informations:", 10, 10);
+            doc.text("Prix Hors Taxe (HT): " + prixHT, 10, 20);
+            doc.text("Taux de TVA: " + tauxTVA + "%", 10, 30);
+            doc.text("Frais de Port: " + fraisPort, 10, 40);
+            doc.text("Bénéfice Souhaité: " + benefice, 10, 50);
+            doc.text("Détails:", 10, 60);
+            doc.text(resultDiv, 10, 70);
+
+            doc.save("resume.pdf");
+        }
+    </script>
+</body>
+</html>
