@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /carte-visite.html
+Disallow: /cgu-cgv.html
