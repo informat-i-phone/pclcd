@@ -109,8 +109,8 @@
             // Affiche le prix final avec bénéfice
             resultHTML += "<p>-- Prix CLIENT TTC: " + prixFinal.toFixed(2) + " euros --</p>";
 
-            // Multiplie le prix final par 0.26 et ajoute le résultat au prix final
-            var prixPlus211 = prixFinal + (prixFinal * 0.2692);
+            // Multiplie le prix final par 0.26 et ajoute le résultat au prix final  original: 0.2692
+            var prixPlus211 = prixFinal + (prixFinal * 0.149);
 
             // Affiche le prix avec l'addition de 0.260 du prix final
             resultHTML += "<p>-- DECLARATION (+21.2): " + prixPlus211.toFixed(2) + " euros --</p>";
