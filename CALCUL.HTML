@@ -95,27 +95,27 @@
             var ttc = prixHT + tva;
 
             // Affiche le prix TTC seul
-            var resultHTML = "<p>-- Le prix TTC: " + ttc.toFixed(2) + " euros --</p>";
+            var resultHTML = "<p>-- PIECES TTC: " + ttc.toFixed(2) + " euros --</p>";
 
             // Ajoute les frais de port
             var ttcFdp = ttc + fraisPort;
 
             // Affiche le prix TTC avec frais de port
-            resultHTML += "<p>-- Le prix TTC avec FDP: " + ttcFdp.toFixed(2) + " euros --</p>";
+            resultHTML += "<p>-- PIECES + FDP TTC: " + ttcFdp.toFixed(2) + " euros --</p>";
 
             // Calcule le prix final avec bénéfice
             var prixFinal = ttcFdp + benefice;
 
             // Affiche le prix final avec bénéfice
-            resultHTML += "<p>-- Prix CLIENT: " + prixFinal.toFixed(2) + " euros --</p>";
+            resultHTML += "<p>-- Prix CLIENT TTC: " + prixFinal.toFixed(2) + " euros --</p>";
 
             // Multiplie le prix final par 0.26 et ajoute le résultat au prix final
             var prixPlus211 = prixFinal + (prixFinal * 0.2692);
 
             // Affiche le prix avec l'addition de 0.260 du prix final
-            resultHTML += "<p>-- Prix A DECLARER: " + prixPlus211.toFixed(2) + " euros --</p>";
+            resultHTML += "<p>-- DECLARATION (+21.2): " + prixPlus211.toFixed(2) + " euros --</p>";
 
-            // Multiplie le nouveau résultat par 0.2997 et ajoute le résultat au nouveau résultat
+            // Multiplie le nouveau résultat par 0.2997 et ajoute le résultat au nouveau résultat AVANT 0.2997
             var prixPlus2997 = prixPlus211 + (prixPlus211 * 0.2997);
 
             // Affiche le prix avec l'addition de 0.2997 du prix précédent
@@ -125,13 +125,13 @@
             var prixDiviseDeux = prixPlus2997 / 2;
 
             // Affiche le prix divisé par deux
-            resultHTML += "<p>-- Prix -- A ENCAISSER: " + prixDiviseDeux.toFixed(2) + " euros --</p>";
+            resultHTML += "<p>-- Le client paye--: " + prixDiviseDeux.toFixed(2) + " euros --</p>";
 
             // Calcule le gain
             var gain = prixFinal - prixDiviseDeux;
 
             // Affiche le gain sur fond bleu
-            resultHTML += "<div class='gain'>-- GAIN CLIENT: " + gain.toFixed(2) + " euros --</div>";
+            resultHTML += "<div class='gain'>-- Le client ECONOMISE: " + gain.toFixed(2) + " euros --</div>";
 
             // Affiche le résultat dans la div
             document.getElementById('result').innerHTML = resultHTML;
