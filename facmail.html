@@ -48,13 +48,72 @@
             background-color: #45a049;
         }
     </style>
+    <!-- Inclusion de la bibliothèque EmailJS -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("38gyd-UrPG6stjh1C");  // Remplacez par votre UserID
+       })();
+    </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.21/jspdf.plugin.autotable.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@2.6.4/dist/email.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Générateur de Factures/Devis</h1>
+        <h2>Informations du Client</h2>
+        <label for="nomClient">Nom du Client :</label>
+        <input type="text" id="nomClient">
+
+        <label for="prenomClient">Prénom du Client :</label>
+        <input type="text" id="prenomClient">
+
+        <label for="adresseClient">Adresse du Client :</label>
+        <input type="text" id="adresseClient">
+
+        <label for="mailClient">Mail du Client :</label>
+        <input type="text" id="mailClient">
+
+        <label for="telClient">Numéro de Téléphone du Client :</label>
+        <input type="text" id="telClient">
+
+        <h2>Détails du Produit/Service</h2>
+        <label for="designation1">Désignation 1 :</label>
+        <input type="text" id="designation1">
+        <label for="quantite1">Quantité 1 :</label>
+        <input type="number" id="quantite1" step="0.01">
+        <label for="prixHT1">Prix Hors Taxe (HT) 1 :</label>
+        <input type="number" id="prixHT1" step="0.01">
+
+        <label for="designation2">Désignation 2 :</label>
+        <input type="text" id="designation2">
+        <label for="quantite2">Quantité 2 :</label>
+        <input type="number" id="quantite2" step="0.01">
+        <label for="prixHT2">Prix Hors Taxe (HT) 2 :</label>
+        <input type="number" id="prixHT2" step="0.01">
+
+        <label for="designation3">Désignation 3 :</label>
+        <input type="text" id="designation3">
+        <label for="quantite3">Quantité 3 :</label>
+        <input type="number" id="quantite3" step="0.01">
+        <label for="prixHT3">Prix Hors Taxe (HT) 3 :</label>
+        <input type="number" id="prixHT3" step="0.01">
+
+        <h2>Type de Document</h2>
+        <label for="typeDocument">Type de Document :</label>
+        <select id="typeDocument">
+            <option value="Facture">Facture</option>
+            <option value="Devis">Devis</option>
+        </select>
+
+        <button onclick="genererPDF()">Générer PDF</button>
+        <button onclick="envoyerEmail()">Envoyer par Email</button>
+
+        <div class="result" id="result"></div>
+    </div>
+
     <script>
-        (function() {
-            emailjs.init("38gyd-UrPG6stjh1C"); // Remplacez par votre User ID EmailJS
-        })();
+        let pdfBlob = null;
 
         async function genererPDF() {
             const { jsPDF } = window.jspdf;
@@ -62,14 +121,14 @@
 
             // Informations de l'entreprise
             const entrepriseInfo = `
-GSM PC MAC (me)
-Informatique & réparation d'ordinateurs
+GSM PC MAC (PLAY54) me
+Réparation de consoles
 
-5 rte de Mirecourt
-54000, Nancy
-Tel. +33(0) 778052622
-Mail: gsm.pc.mac@mailo.com
-N° SIRET : 90834832900016
+5 rte de Mirecourt, 54000, Nancy.
+Tel. +33(0) 7 66 31 21 27
+Site web: www.play54.fr
+Mail: contact@play54.fr
+SIRET : 90834832900016
             `;
 
             // Récupère les valeurs saisies par l'utilisateur
@@ -191,7 +250,9 @@ Date: ${dateFacture}
 - GARANTIE DE 3 MOIS.
 - DIAGNOSTIC & DEVIS GRATUIT (Si devis accepté). Autres cas 20€ 
 (Refus de devis, produit irréparable, pièces introuvables, etc).
-- SI vous trouvez moins cher. On vous rembourse 02 fois la différence.
+- SI vous trouvez moins cher. On vous rembourse 02 fois la différence *
+Cgu & cgv (www.play54.fr/cgu-play54.html)
+www.play54.fr
                 `;
                 doc.text(devisNotes, 10, finalY + 10);
                 finalY += 60; // Ajuste la position finale pour laisser de l'espace
@@ -199,8 +260,8 @@ Date: ${dateFacture}
 
             // Informations sur l'entreprise (toujours affichées)
             const enterpriseInfo = `
-N° Siret 90834832900016 RCS Nancy
-Code APE 9511ZZ - N° TVA Intracom. FR / www.repair-pc-mac.fr
+Code APE 9511ZZ - N° TVA Intracom. FR ----- 
+
             `;
             doc.setFontSize(10);
             doc.text(enterpriseInfo, 10, finalY + 30);
@@ -208,100 +269,57 @@ Code APE 9511ZZ - N° TVA Intracom. FR / www.repair-pc-mac.fr
             // Ajouter les conditions de paiement et autres informations spécifiques pour la facture
             if (typeDocument === "Facture") {
                 const footerNotes = `
-En votre aimable règlement. Cordialement.
+En votre aimable règlement.
 
 Conditions de paiement : paiement à réception.
 Aucun escompte consenti pour règlement anticipé.
 Tout incident de paiement est passible d'intérêt de retard. 
-Indemnité forfaitaire pour frais de recouvrement due au créancier en cas de retard de paiement : 40€.
 
-www.repair-pc-mac.fr
+
+
+
+Cgu & cgv (www.play54.fr/cgu-play54.html)
+www.play54.fr
                 `;
                 doc.text(footerNotes, 10, finalY + 40);
             }
 
+            // Sauvegarde du PDF dans une variable blob
+            pdfBlob = doc.output('blob');
+
             // Détermine le nom du fichier
             const documentType = typeDocument === "Facture" ? "Facture" : "Devis";
             const nomFichier = nomClient && prenomClient ? `${nomClient}_${prenomClient}_${documentType}.pdf` : `${numeroFacture}_${documentType}.pdf`;
-
-            // Enregistre le fichier PDF en blob
-            const pdfBlob = doc.output('blob');
-
-            // Envoi par email via EmailJS
-            const emailParams = {
-                to_email: document.getElementById('emailTo').value,
-                from_name: "GSM PC MAC",
-                message_html: `Veuillez trouver en pièce jointe votre ${documentType}.`,
-                attachment: pdfBlob
-            };
-
-            emailjs.send('service_8ri1lhm', 'template_ef2dub3', emailParams)
-            .then((response) => {
-                alert("Email envoyé avec succès !");
-            }, (error) => {
-                alert("Erreur lors de l'envoi de l'email : " + error.text);
-            });
-
-            // Téléchargement local (optionnel)
             doc.save(nomFichier);
         }
+
+        function envoyerEmail() {
+            if (!pdfBlob) {
+                alert("Veuillez d'abord générer le PDF.");
+                return;
+            }
+
+            const mailClient = document.getElementById('mailClient').value;
+            if (!mailClient) {
+                alert("Veuillez entrer l'email du client.");
+                return;
+            }
+
+            const typeDocument = document.getElementById('typeDocument').value;
+
+            var templateParams = {
+                to_email: mailClient,
+                document_type: typeDocument,
+                // Vous pouvez ajouter d'autres variables ici pour le corps de l'email
+            };
+
+            emailjs.send('service_8ri1lhm', 'template_ef2dub3', templateParams)
+                .then(function(response) {
+                   console.log('Email envoyé avec succès!', response.status, response.text);
+                }, function(error) {
+                   console.error('Échec de l\'envoi de l\'email...', error);
+                });
+        }
     </script>
-</head>
-<body>
-    <div class="container">
-        <h1>Générateur de Factures/Devis</h1>
-        <h2>Informations du Client</h2>
-        <label for="nomClient">Nom du Client :</label>
-        <input type="text" id="nomClient">
-
-        <label for="prenomClient">Prénom du Client :</label>
-        <input type="text" id="prenomClient">
-
-        <label for="adresseClient">Adresse du Client :</label>
-        <input type="text" id="adresseClient">
-
-        <label for="mailClient">Mail du Client :</label>
-        <input type="text" id="mailClient">
-
-        <label for="telClient">Numéro de Téléphone du Client :</label>
-        <input type="text" id="telClient">
-
-        <h2>Détails du Produit/Service</h2>
-        <label for="designation1">Désignation 1 :</label>
-        <input type="text" id="designation1">
-        <label for="quantite1">Quantité 1 :</label>
-        <input type="number" id="quantite1" step="0.01">
-        <label for="prixHT1">Prix Hors Taxe (HT) 1 :</label>
-        <input type="number" id="prixHT1" step="0.01">
-
-        <label for="designation2">Désignation 2 :</label>
-        <input type="text" id="designation2">
-        <label for="quantite2">Quantité 2 :</label>
-        <input type="number" id="quantite2" step="0.01">
-        <label for="prixHT2">Prix Hors Taxe (HT) 2 :</label>
-        <input type="number" id="prixHT2" step="0.01">
-
-        <label for="designation3">Désignation 3 :</label>
-        <input type="text" id="designation3">
-        <label for="quantite3">Quantité 3 :</label>
-        <input type="number" id="quantite3" step="0.01">
-        <label for="prixHT3">Prix Hors Taxe (HT) 3 :</label>
-        <input type="number" id="prixHT3" step="0.01">
-
-        <h2>Type de Document</h2>
-        <label for="typeDocument">Type de Document :</label>
-        <select id="typeDocument">
-            <option value="Facture">Facture</option>
-            <option value="Devis">Devis</option>
-        </select>
-
-        <h2>Envoyer par Email</h2>
-        <label for="emailTo">Adresse Email :</label>
-        <input type="text" id="emailTo">
-
-        <button onclick="genererPDF()">Générer et Envoyer PDF</button>
-
-        <div class="result" id="result"></div>
-    </div>
 </body>
 </html>
