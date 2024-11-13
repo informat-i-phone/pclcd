@@ -817,14 +817,14 @@ text-decoration: underline;
 
 .features h2,.content_bottom h2{
 	font-size:3.5em;
-	color:#222;
+	color:#222;     /* h2 dans les pages la couleur avant 222*/
 	padding:10px 0;
 	font-weight:300;
 	text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 }
 .features h2 span,.content_bottom h2 span{
 	font-weight:bold;
-	color:#2e7acc;
+	color:#2e7acc;   /* h2 dans les pages la couleur avant 2e7acc*/
 }
 .features h3 span,.content_bottom h3 span{
 	font-weight:bold;
@@ -2174,3 +2174,450 @@ img.mfp-img {
 		padding: 1em 3em 1em 3em;
 	}
 }
+
+
+
+
+
+
+
+
+
+
+.menu li a.active, .menu li a:focus, .menu li a:active {
+    color: #2e7acc; /* bleu */
+}
+
+.menu li a:hover {
+    color: #2e7acc; /* couleur au survol */
+}
+
+
+
+
+
+
+
+
+
+/* Styles pour le formulaire de contact debut */
+.contact-form {
+    background: linear-gradient(110deg, #2e7acc 10%, rgba(46, 122, 204, 0.77) 100%);
+    color: #fff;
+    padding: 2em;
+    margin-top: 2em;
+    border-radius: 1em;
+    box-shadow: 0px 4px 10px rgba(0, 41, 98, 0.5);
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.contact-form h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 1.1em;
+    margin-top: 1em;
+    color: #ffffff;
+    font-weight: 400;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+    border: 1px solid #e2e2e2;
+    border-radius: 0.5em;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.12);
+    font-size: 1em;
+    color: #333;
+}
+
+.contact-form textarea {
+    height: 6em;
+    resize: vertical;
+}
+
+.contact-form button {
+    background-color: #2e7acc;
+    color: #fff;
+    padding: 0.8em 2em;
+    font-size: 1.1em;
+    font-weight: 500;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.contact-form button:hover {
+    background-color: #c50014;
+}
+
+/* Styles pour le formulaire de contact fin*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* pour image du slider pour chaque page debut*/
+
+
+.contact-page .content_top {
+    background: url("../images/contact-background.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 40% 80%;
+    padding-bottom: 1.5em;
+    position: relative;
+}
+
+.contact-page .content_top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/aqw.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.contact-page .features_services ul {
+    background: linear-gradient(110deg, rgb(46, 122, 204) 10%, rgba(46, 122, 204, 0.77) 100%), url("../images/contact-features.jpg");
+    padding: 2em;
+    border-radius: 2em;
+    color: #e2e7ec;
+    box-shadow: 0px 4px 9px rgba(0, 41, 98, 0.54);
+}
+
+.contact-page .informatique-grand-est {
+    background: rgba(255, 255, 255, .88) url("../images/contact-grand-est.jpg") no-repeat center;
+    background-size: cover;
+    padding: 2em 1em;
+    border-radius: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contact-page .parallax_ordinateur {
+    background: url("../images/contact-parallax.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: 50% 0%;
+    padding: 0;
+    position: relative;
+}
+
+.contact-page .content_info {
+    background: url("../images/contact-info.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: 50% 0%;
+    padding: 0;
+    position: relative;
+}
+
+.contact-page .content_info:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #6e6e6e, #6e6e6e);
+    opacity: 0.25;
+}
+
+
+
+
+
+
+
+.informatique-page .content_top {
+    background: url("../images/contact-background.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 40% 80%;
+    padding-bottom: 1.5em;
+    position: relative;
+}
+
+.informatique-page .content_top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/0258.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.informatique-page .features_services ul {
+    background: linear-gradient(110deg, rgb(46, 122, 204) 10%, rgba(46, 122, 204, 0.77) 100%), url("../images/contact-features.jpg");
+    padding: 2em;
+    border-radius: 2em;
+    color: #e2e7ec;
+    box-shadow: 0px 4px 9px rgba(0, 41, 98, 0.54);
+}
+
+.informatique-page .informatique-grand-est {
+    background: rgba(255, 255, 255, .88) url("../images/contact-grand-est.jpg") no-repeat center;
+    background-size: cover;
+    padding: 2em 1em;
+    border-radius: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.informatique-page .parallax_ordinateur {
+    background: url("../images/contact-parallax.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: 50% 0%;
+    padding: 0;
+    position: relative;
+}
+
+.informatique-page .content_info {
+    background: url("../images/contact-info.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: 50% 0%;
+    padding: 0;
+    position: relative;
+}
+
+.informatique-page .content_info:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #6e6e6e, #6e6e6e);
+    opacity: 0.25;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.depannage-page .content_top {
+    background: url("../images/contact-background.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 40% 80%;
+    padding-bottom: 1.5em;
+    position: relative;
+}
+
+.depannage-page .content_top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/0147.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.depannage-page .features_services ul {
+    background: linear-gradient(110deg, rgb(46, 122, 204) 10%, rgba(46, 122, 204, 0.77) 100%), url("../images/contact-features.jpg");
+    padding: 2em;
+    border-radius: 2em;
+    color: #e2e7ec;
+    box-shadow: 0px 4px 9px rgba(0, 41, 98, 0.54);
+}
+
+.depannage-page .informatique-grand-est {
+    background: rgba(255, 255, 255, .88) url("../images/contact-grand-est.jpg") no-repeat center;
+    background-size: cover;
+    padding: 2em 1em;
+    border-radius: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.depannage-page .parallax_ordinateur {
+    background: url("../images/contact-parallax.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: 50% 0%;
+    padding: 0;
+    position: relative;
+}
+
+.depannage-page .content_info {
+    background: url("../images/contact-info.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: 50% 0%;
+    padding: 0;
+    position: relative;
+}
+
+.depannage-page .content_info:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #6e6e6e, #6e6e6e);
+    opacity: 0.25;
+}
+
+
+
+
+
+
+.remplacement-ecran-pc-page .content_top {
+    background: url("../images/contact-background.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: 40% 80%;
+    padding-bottom: 1.5em;
+    position: relative;
+}
+
+.remplacement-ecran-pc-page .content_top::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/0369.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.remplacement-ecran-pc-page .features_services ul {
+    background: linear-gradient(110deg, rgb(46, 122, 204) 10%, rgba(46, 122, 204, 0.77) 100%), url("../images/contact-features.jpg");
+    padding: 2em;
+    border-radius: 2em;
+    color: #e2e7ec;
+    box-shadow: 0px 4px 9px rgba(0, 41, 98, 0.54);
+}
+
+.remplacement-ecran-pc-page .informatique-grand-est {
+    background: rgba(255, 255, 255, .88) url("../images/contact-grand-est.jpg") no-repeat center;
+    background-size: cover;
+    padding: 2em 1em;
+    border-radius: 2em;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.remplacement-ecran-pc-page .parallax_ordinateur {
+    background: url("../images/contact-parallax.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: 50% 0%;
+    padding: 0;
+    position: relative;
+}
+
+.remplacement-ecran-pc-page .content_info {
+    background: url("../images/contact-info.jpg") no-repeat fixed;
+    background-size: cover;
+    background-position: 50% 0%;
+    padding: 0;
+    position: relative;
+}
+
+.remplacement-ecran-pc-page .content_info:before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to left, #6e6e6e, #6e6e6e);
+    opacity: 0.25;
+}
+
+
+
+
+
+/* pour image du slider pour chaque page fin*/
