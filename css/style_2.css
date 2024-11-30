@@ -412,7 +412,7 @@ input:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/4444.jpg"); /*image principale*/
+    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/4444-2.jpg"); /*image principale*/
 	/*original background: linear-gradient(110deg, rgb(13, 88, 166) 10%, rgba(68, 147, 217, 0.77) 100%), url("../images/1515.jpg");         */
     z-index: 0;
     background-size: cover;
@@ -1201,7 +1201,7 @@ text-decoration: underline;
 .customer_desc h6{
 	font-size:1.1em;
 	color:#131313;
-	font-weight: 500;
+	font-weight: 380;   /*  original 500 adresse de l atelier */
 }
 .customer_desc p{
 	font-size:1em;
@@ -2561,7 +2561,7 @@ img.mfp-img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/0369.jpg");
+    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/0369-2.jpg");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -2621,3 +2621,22 @@ img.mfp-img {
 
 
 /* pour image du slider pour chaque page fin*/
+
+
+
+
+
+
+
+
+
+/* ajouted mais ne fonctionne pas c est pour l adresse atelier et le tel pour les guillemet*/
+.quotes.down {
+    display: block;
+    margin: 10px auto;
+    background: #c52222; /* Fond noir */
+    color: #cd2020; /* Texte blanc */
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-style: italic; /* Facultatif, pour un style citatif */
+}
