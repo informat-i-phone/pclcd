@@ -2650,14 +2650,23 @@ img.mfp-img {
 
 /* premiere image responsive */
 
+
+
+
+
+
 .content_top {
-    background: url("../images/4444-3.jpg") no-repeat center center;
-    background-size: cover; /* Permet à l'image de remplir son conteneur */
+    background: url("../images/4444-3.jpg") no-repeat center center; /* Applique l'image comme arrière-plan */
+    background-size: contain; /* Contient l'image entière dans le conteneur */
+    background-position: center; /* Centre l'image */
+    background-attachment: scroll; /* Assure un défilement fluide sur mobile */
+    height: 100vh; /* Prend toute la hauteur de l'écran */
 }
 
 @media (max-width: 768px) {
     .content_top {
-        background-size: contain; /* Permet de voir l'image entière */
-        background-position: top; /* Optionnel : repositionne l'image */
+        height: auto; /* Ajuste la hauteur automatiquement */
+        min-height: 300px; /* Définissez une hauteur minimale si nécessaire */
+        background-size: contain; /* S'assure que l'image reste visible en entier */
     }
 }
