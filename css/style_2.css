@@ -412,7 +412,7 @@ input:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/4444-2.jpg"); /*image principale*/
+    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/4444-5.jpg"); /*image principale*/
 	/*original background: linear-gradient(110deg, rgb(13, 88, 166) 10%, rgba(68, 147, 217, 0.77) 100%), url("../images/1515.jpg");         */
     z-index: 0;
     background-size: cover;
@@ -2639,4 +2639,25 @@ img.mfp-img {
     padding: 5px 10px;
     border-radius: 4px;
     font-style: italic; /* Facultatif, pour un style citatif */
+}
+
+
+
+
+
+
+
+
+/* premiere image responsive */
+
+.content_top {
+    background: url("../images/4444-3.jpg") no-repeat center center;
+    background-size: cover; /* Permet à l'image de remplir son conteneur */
+}
+
+@media (max-width: 768px) {
+    .content_top {
+        background-size: contain; /* Permet de voir l'image entière */
+        background-position: top; /* Optionnel : repositionne l'image */
+    }
 }
