@@ -1,1 +1,160 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulaire pour recueillir les informations des clients.">
+    <title>Formulaire Client</title>
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #0056b3;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            background-color: #0056b3;
+            color: #fff;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        /* Formulaire */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            transition: border-color 0.3s;
+        }
+
+        input:focus, textarea:focus {
+            border-color: #0056b3;
+            outline: none;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 15px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #004494;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #f1f1f1;
+            font-size: 14px;
+            color: #666;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .container {
+                padding: 15px;
+            }
+
+            header h1 {
+                font-size: 20px;
+            }
+
+            button {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Formulaire d'Informations Client</h1>
+        </div>
+    </header>
+
+    <main>
+        <section id="formulaire">
+            <div class="container">
+                <h2>Merci de remplir vos informations</h2>
+                <form action="mailto:gsm.pc.mac@mailo.com" method="post" enctype="text/plain">
+                    <div>
+                        <label for="nom">Nom :</label>
+                        <input type="text" id="nom" name="Nom" placeholder="Entrez votre nom" required>
+                    </div>
+                    <div>
+                        <label for="prenom">Prénom :</label>
+                        <input type="text" id="prenom" name="Prenom" placeholder="Entrez votre prénom" required>
+                    </div>
+                    <div>
+                        <label for="email">Adresse Email :</label>
+                        <input type="email" id="email" name="Email" placeholder="votre.email@example.com" required>
+                    </div>
+                    <div>
+                        <label for="adresse">Adresse Postale :</label>
+                        <textarea id="adresse" name="Adresse" rows="4" placeholder="Entrez votre adresse complète" required></textarea>
+                    </div>
+                    <div>
+                        <label for="reparation">Pour la réparation de :</label>
+                        <textarea id="reparation" name="reparation" rows="2" placeholder="Décrivez le produit ou le problème à réparer" required></textarea>
+                    </div>
+                    <div>
+                        <button type="submit">Envoyer</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 - Votre entreprise. Tous droits réservés.</p>
+        </div>
+    </footer>
+</body>
+</html>
