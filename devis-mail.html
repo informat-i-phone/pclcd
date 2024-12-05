@@ -121,8 +121,10 @@
         <section id="formulaire">
             <div class="container">
                 <h2>Merci de remplir vos informations</h2>
-                <!-- Remplacez l'URL suivante par celle générée sur votre compte Formspree -->
-                <form action="https://formspree.io/f/mpwzplqd" method="POST">
+                <form action="https://formspree.io/f/<votre-identifiant>" method="POST">
+                    <!-- Champ caché pour configurer le format de l'email -->
+                    <input type="hidden" name="_format" value="plain">
+                    
                     <div>
                         <label for="nom">Nom :</label>
                         <input type="text" id="nom" name="Nom" placeholder="Entrez votre nom" required>
@@ -141,7 +143,7 @@
                     </div>
                     <div>
                         <label for="reparation">Pour la réparation de :</label>
-                        <textarea id="reparation" name="Réparation" rows="2" placeholder="Décrivez le produit ou le problème à réparer" required></textarea>
+                        <textarea id="reparation" name="Reparation" rows="2" placeholder="Décrivez le produit ou le problème à réparer" required></textarea>
                     </div>
                     <div>
                         <button type="submit">Envoyer</button>
