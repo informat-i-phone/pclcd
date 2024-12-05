@@ -35,9 +35,20 @@
             padding: 20px 0;
         }
 
+        header .header-content {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            font-size: 14px;
+        }
+
         header h1 {
             margin: 0;
             font-size: 24px;
+        }
+
+        header p {
+            margin: 5px 0;
         }
 
         /* Formulaire */
@@ -81,6 +92,32 @@
             background-color: #004494;
         }
 
+        .note {
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+        }
+
+        .checkbox-container input {
+            margin-right: 10px;
+        }
+
+        .checkbox-container a {
+            color: #0056b3;
+            text-decoration: none;
+        }
+
+        .checkbox-container a:hover {
+            text-decoration: underline;
+        }
+
         /* Footer */
         footer {
             text-align: center;
@@ -91,7 +128,13 @@
         }
 
         footer p {
-            margin: 0;
+            margin: 5px 0;
+        }
+
+        footer .company-info {
+            font-size: 12px;
+            color: #333;
+            margin-top: 10px;
         }
 
         /* Responsive */
@@ -112,8 +155,12 @@
 </head>
 <body>
     <header>
-        <div class="container">
-            <h1>Formulaire d'Informations Client</h1>
+        <div class="header-content">
+            <h1>Formulaire d'Informations Client (Devis-Facture)</h1>
+            <p><strong>GSM PC MAC</strong> | Réparation & Informatique</p>
+            <p>Route de Mirecourt, 54000 Nancy</p>
+            <p>Téléphone : +33(0)778052622 | Email : <a href="mailto:gsm.pc.mac@mailo.com" style="color: #fff;">gsm.pc.mac@mailo.com</a></p>
+            <p>N° SIRET : 90834832900016</p>
         </div>
     </header>
 
@@ -121,7 +168,7 @@
         <section id="formulaire">
             <div class="container">
                 <h2>Merci de remplir vos informations</h2>
-                <form action="https://formspree.io/f/mpwzplqd" method="POST">
+                <form action="https://formspree.io/f/mpwzplqd" method="POST" onsubmit="return validerCGU();">
                     <!-- Champ caché pour configurer le format -->
                     <input type="hidden" name="_format" value="plain">
                     
@@ -147,8 +194,23 @@
                     </div>
                     <div>
                         <label for="reparation">Pour la réparation de :</label>
-                        <textarea id="reparation" name="Reparation" rows="2" placeholder="Décrivez le produit ou le problème à réparer" required></textarea>
+                        <textarea id="reparation" name="Reparation" rows="2" placeholder="Citez le produit à réparer et la panne brièvement" required></textarea>
                     </div>
+
+                    <!-- Checkbox pour accepter les CGU/CGV -->
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="cgu" required>
+                        <label for="cgu">
+                            J'ai consulté et accepté les 
+                            <a href="/cgu-cgv.html" target="_blank">CGU et CGV</a>.
+                        </label>
+                    </div>
+                    
+                    <!-- Note sur la non-collecte des données -->
+                    <p class="note">
+                        Aucune donnée personnelle n'est collectée ni stockée. Ce formulaire est uniquement utilisé pour traiter votre demande.
+                    </p>
+                    
                     <div>
                         <button type="submit">Envoyer</button>
                     </div>
@@ -159,8 +221,26 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 - Votre entreprise. Tous droits réservés.</p>
+            <p>&copy; 2024 - Repair Pc Mac. Tous droits réservés.</p>
+            <div class="company-info">
+                <p><strong>GSM PC MAC</strong> | Réparation & Informatique</p>
+                <p>Route de Mirecourt, 54000 Nancy</p>
+                <p>Téléphone : +33(0)778052622 | Email : <a href="mailto:gsm.pc.mac@mailo.com">gsm.pc.mac@mailo.com</a></p>
+                <p>N° SIRET : 90834832900016</p>
+            </div>
         </div>
     </footer>
+
+    <script>
+        // Validation de la case à cocher CGU
+        function validerCGU() {
+            const cguCheckbox = document.getElementById('cgu');
+            if (!cguCheckbox.checked) {
+                alert("Veuillez consulter et accepter les CGU et CGV avant de soumettre le formulaire.");
+                return false;
+            }
+            return true;
+        }
+    </script>
 </body>
 </html>
