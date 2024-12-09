@@ -2545,7 +2545,7 @@ img.mfp-img {
 
 
 
-.remplacement-ecran-pc-page .content_top {
+.remplacement-ecran-pc-page .content_top {    
     background: url("../images/contact-background.jpg") no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -2561,7 +2561,7 @@ img.mfp-img {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/0369-2.jpg");
+    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/0369.jpg"); /*image page reparation ecran */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
