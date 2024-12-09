@@ -412,7 +412,7 @@ input:focus {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/4444-5.jpg"); /*image principale*/
+    background: linear-gradient(110deg, rgba(0, 0, 0, 0.3) 10%, rgba(0, 0, 0, 0.3) 100%), url("../images/4444.jpg"); /*image principale*/
 	/*original background: linear-gradient(110deg, rgb(13, 88, 166) 10%, rgba(68, 147, 217, 0.77) 100%), url("../images/1515.jpg");         */
     z-index: 0;
     background-size: cover;
@@ -2652,7 +2652,7 @@ img.mfp-img {
 
 
 .content_top {
-    background: url("../images/4444-5.jpg") no-repeat center center; /* Applique l'image comme arrière-plan */
+    background: url("../images/4444.jpg") no-repeat center center; /* Applique l'image comme arrière-plan */
     background-size: contain; /* Contient l'image entière dans le conteneur */
     background-position: center; /* Centre l'image */
     background-attachment: scroll; /* Assure un défilement fluide sur mobile */
